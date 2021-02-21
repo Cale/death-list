@@ -2,7 +2,7 @@
 
 include('simple_html_dom.php');
 
-$page = 'https://en.wikipedia.org/wiki/Deaths_in_2021';
+$page = 'https://en.wikipedia.org/wiki/Recent_deaths';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);

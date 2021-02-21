@@ -20,7 +20,7 @@ $html->load($str);
 
 echo '<!DOCTYPE html>
 <head>
-	<title></title>
+	<title>Death List</title>
 	<link rel="stylesheet" type="text/css" href="/css/death.css" media="screen">
 </head>
 <body>';
@@ -31,7 +31,42 @@ foreach($html->find('ul', 3)->find('li') as $person)
 	{
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
 		echo '<li>'.$person.'</li>';
-		echo "\n";
+	}
+	
+foreach($html->find('ul', 4)->find('li') as $person)
+	{
+		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+		echo '<li>'.$person.'</li>';
+	}
+	
+foreach($html->find('ul', 5)->find('li') as $person)
+	{
+		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+		echo '<li>'.$person.'</li>';
+	}
+	
+foreach($html->find('ul', 6)->find('li') as $person)
+	{
+		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+		echo '<li>'.$person.'</li>';
+	}
+	
+foreach($html->find('ul', 7)->find('li') as $person)
+	{
+		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+		echo '<li>'.$person.'</li>';
+	}
+		
+foreach($html->find('ul', 8)->find('li') as $person)
+	{
+		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+		echo '<li>'.$person.'</li>';
+	}
+		
+foreach($html->find('ul', 9)->find('li') as $person)
+	{
+		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+		echo '<li>'.$person.'</li>';
 	}
 
 echo '</ul>';

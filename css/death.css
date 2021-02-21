@@ -2,7 +2,7 @@ body {
   background: #3d0b01;
   color: #fff;
   font-family: sans-serif;
-  font-size: .45em;
+  font-size: 1em;
   margin: 0;
   padding: 0;
 }
@@ -17,5 +17,5 @@ li {
   display: inline-block;
   list-style-type: none;
   margin: 0;
-  padding: 2em;
+  padding: 1em;
 }

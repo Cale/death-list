@@ -56,18 +56,6 @@ foreach($html->find('ul', 7)->find('li') as $person)
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
 		echo '<li>'.$person.'</li>';
 	}
-		
-foreach($html->find('ul', 8)->find('li') as $person)
-	{
-		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
-		echo '<li>'.$person.'</li>';
-	}
-		
-foreach($html->find('ul', 9)->find('li') as $person)
-	{
-		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
-		echo '<li>'.$person.'</li>';
-	}
 
 echo '</ul>';
 echo '	<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>

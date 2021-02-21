@@ -70,6 +70,9 @@ foreach($html->find('ul', 9)->find('li') as $person)
 	}
 
 echo '</ul>';
-echo '</body></html>';
+echo '	<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/js/death.js"></script>
+</body>
+</html>';
 
 ?>

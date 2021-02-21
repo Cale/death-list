@@ -7,21 +7,16 @@ $( document ).ready(function() {
       format: "json"
     })
     .done(function( data ) {
+      $("ul").empty();
       $.each( data, function( i, item ) {
         var color = colors[Math.floor(Math.random() * colors.length)];
         $( "ul" ).append('<li style="background-color:'+color+';">'+item+'</li>');
         if (data.length == i+1) {
-          fade();
+          $("li").fadeTo(10000, 1);
+          setTimeout(fade, 11000);
         }
       });
     });
-  }
-  
-  getPeople();
-
-  function restore() {
-    $("li").fadeTo(10000, 1);
-    setTimeout(fade, 11000);
   }
   
   function fade() {
@@ -31,12 +26,14 @@ $( document ).ready(function() {
       function fadeInNextLI() {
         v.eq(cur++).fadeTo(2000, 0);
         if (cur != v.length) {
-          setTimeout(fadeInNextLI, 500)
+          setTimeout(fadeInNextLI, 1000)
         } else {
-          restore();
+          getPeople();
         }
       }
   fadeInNextLI();
   }
+
+  getPeople();
 
 });

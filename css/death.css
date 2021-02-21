@@ -16,6 +16,7 @@ li {
   background-color: #f23009;
   display: inline-block;
   list-style-type: none;
+  opacity: 0;
   margin: 0;
   padding: 1em;
 }

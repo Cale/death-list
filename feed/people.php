@@ -1,6 +1,6 @@
 <?php
 
-include('../simple_html_dom.php');
+include('simple_html_dom.php');
 
 $page = 'https://en.wikipedia.org/wiki/Recent_deaths';
 
@@ -14,7 +14,6 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 $str = curl_exec($curl);
 curl_close($curl);
 
-// Create a DOM object
 $html = new simple_html_dom();
 $html->load($str);
 
@@ -22,13 +21,10 @@ $people = array();
 
 header('Content-type:application/json;charset=utf-8');
 
-//echo '{"deathlist": { "people": [';
-
 foreach($html->find('ul', 3)->find('li') as $person)
 	{
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
 		array_push($people, $person);
-		//echo '"'.$person.'",';
 	}
 	
 foreach($html->find('ul', 4)->find('li') as $person)

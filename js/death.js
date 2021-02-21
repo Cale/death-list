@@ -1,28 +1,31 @@
 $( document ).ready(function() {
 
-  var v = $("ul > li");
+  colors = Array("#f23009", "#c12505", "#8e1b04");
   
-  function setBGColors() {
-    colors = Array("#f23009", "#c12505", "#8e1b04");
-    
-    var cur = 0;
-    for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
-      function setColor() {
+  function getPeople() {
+    $.getJSON( "/feed/people.php", {
+      format: "json"
+    })
+    .done(function( data ) {
+      $.each( data, function( i, item ) {
         var color = colors[Math.floor(Math.random() * colors.length)];
-        v.eq(cur++).css("background-color", color);
-        if (cur != v.length) {
-          setColor();
+        $( "ul" ).append('<li style="background-color:'+color+';">'+item+'</li>');
+        if (data.length == i+1) {
+          fade();
         }
-      }
-  setColor();
+      });
+    });
   }
   
+  getPeople();
+
   function restore() {
     $("li").fadeTo(10000, 1);
     setTimeout(fade, 11000);
   }
   
   function fade() {
+    var v = $("ul > li");
     var cur = 0;
     for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
       function fadeInNextLI() {
@@ -35,8 +38,5 @@ $( document ).ready(function() {
       }
   fadeInNextLI();
   }
-
-setBGColors();
-fade();
 
 });

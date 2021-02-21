@@ -28,7 +28,7 @@ $( document ).ready(function() {
         if (cur != v.length) {
           setTimeout(fadeInNextLI, 1000)
         } else {
-          getPeople();
+          setTimeout(getPeople, 5000);
         }
       }
   fadeInNextLI();

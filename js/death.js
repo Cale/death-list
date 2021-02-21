@@ -3,7 +3,7 @@ $( document ).ready(function() {
   colors = Array("#f23009", "#c12505", "#8e1b04");
   
   function getPeople() {
-    $.getJSON( "/feed/people.php", {
+    $.getJSON( "../feed/people.php", {
       format: "json"
     })
     .done(function( data ) {

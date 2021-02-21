@@ -1,1 +1,3 @@
-# death-list
+# Death List
+
+Death List pulls names from Wikipedia's [recent deaths list](https://en.wikipedia.org/wiki/Recent_deaths), displays each name, and slowly fades each one out over time. This is a supplement project to a larger design project focused on death, inspired by Philip Larkin's poem, [https://www.poetryfoundation.org/poems/48422/aubade-56d229a6e2f07](Aubade). The design project was for GDVX 734 Typographic Voice and Visual Narrative, a graduate design course at Savannah College of Art and Design.

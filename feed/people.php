@@ -24,25 +24,33 @@ header('Content-type:application/json;charset=utf-8');
 foreach($html->find('ul', 3)->find('li') as $person)
 	{
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
-		array_push($people, $person);
+		if ($person != "") {
+			array_push($people, $person);
+		}
 	}
 	
 foreach($html->find('ul', 4)->find('li') as $person)
 	{
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
-		array_push($people, $person);
+		if ($person != "") {
+			array_push($people, $person);
+		}
 	}
 	
 foreach($html->find('ul', 5)->find('li') as $person)
 	{
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
-		array_push($people, $person);
+		if ($person != "") {
+			array_push($people, $person);
+		}
 	}
 	
 foreach($html->find('ul', 6)->find('li') as $person)
 	{
 		$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
-		array_push($people, $person);
+		if ($person != "") {
+			array_push($people, $person);
+		}
 	}
 
 echo json_encode($people);

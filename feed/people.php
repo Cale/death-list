@@ -2,7 +2,8 @@
 
 include('simple_html_dom.php');
 
-$page = 'https://en.wikipedia.org/wiki/Recent_deaths';
+#$page = 'https://en.wikipedia.org/wiki/Recent_deaths';
+$page = 'https://en.wikipedia.org/wiki/Deaths_in_August_2021';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
@@ -52,6 +53,70 @@ foreach($html->find('ul', 6)->find('li') as $person)
 			array_push($people, $person);
 		}
 	}
+
+foreach($html->find('ul', 7)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul', 8)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul', 9)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul', 10)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul',11)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul', 12)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul', 13)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
+
+foreach($html->find('ul', 14)->find('li') as $person)
+{
+	$person = substr($person->plaintext, 0, strpos($person->plaintext, '.&#91;'));
+	if ($person != "") {
+		array_push($people, $person);
+	}
+}
 
 echo json_encode($people);
 
